@@ -20,23 +20,22 @@ jobs:
       uses: kopp/build-aur-packages@v1-glibcfix
       with:
         packages: >
-          azure-cli
-          conan
-          micronucleus-git
-          mons
-          neovim-symlinks
-          onedrive-abraunegg
-          python-ipympl
-          python-pydub
-          python-pyminifier
-          jmtpfs
-          skypeforlinux-stable-bin
-          srecord
-          sourcetrail
-          teams
-          vdhcoapp-bin
-          visual-studio-code-bin
-          xfig
+          cutefish-git
+          cutefish-calculator-git
+          cutefish-core-git
+          cutefish-dock-git
+          cutefish-filemanager-git
+          cutefish-icons-git
+          cutefish-kwin-plugins-git
+          cutefish-launcher-git
+          cutefish-qt-plugins-git
+          cutefish-screenlocker-git
+          cutefish-settings-git
+          cutefish-statusbar-git
+          cutefish-terminal-git
+          cutefish-wallpapers-git
+          fishui-git
+          libcutefish-git
 
     - name: List generated Files
       run: ls -1 > ${{ github.workspace }}/files.txt
@@ -45,13 +44,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: aurci2
+        tag_name: cutefish-git-ci
     - name: Upload Files to Release
       uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: aurci2
+        tag_name: cutefish-git-ci
         name: aurci build ${{ github.run_number }} from ${{ steps.date.outputs.date }}
         body: aurci build ${{ github.run_number }} from ${{ steps.date.outputs.date }}
         files: |
