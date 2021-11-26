@@ -20,7 +20,22 @@ jobs:
       uses: kopp/build-aur-packages@v1-glibcfix
       with:
         packages: >
-          cutefish-git
+          fishui-git
+          libcutefish-git
+          cutefish-wallpapers-git
+          cutefish-statusbar-git
+          cutefish-settings-git
+          cutefish-qt-plugins-git
+          cutefish-launcher-git
+          cutefish-kwin-plugins-git
+          cutefish-icons-git
+          cutefish-filemanager-git
+          cutefish-dock-git cutefish-core-git
+          cutefish-calculator-git
+          cutefish-terminal-git
+          cutefish-screenlocker-git
+        missing_pacman_dependencies: >
+          
 
     - name: List generated Files
       run: ls -1 > ${{ github.workspace }}/files.txt
