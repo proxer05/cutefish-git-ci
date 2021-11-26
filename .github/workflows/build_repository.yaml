@@ -17,27 +17,26 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M')"
 
     - name: Build Packages
-      uses: kopp/build-aur-packages@v1-glibcfix
+      uses: proxer05/build-aur-packages@cutefish-a
       with:
         packages: >
-          azure-cli
-          conan
-          micronucleus-git
-          mons
-          neovim-symlinks
-          onedrive-abraunegg
-          python-ipympl
-          python-pydub
-          python-pyminifier
-          jmtpfs
-          skypeforlinux-stable-bin
-          srecord
-          sourcetrail
-          teams
-          vdhcoapp-bin
-          visual-studio-code-bin
-          xfig
-
+          fishui-git
+          libcutefish-git
+          cutefish-wallpapers-git
+          cutefish-statusbar-git
+          cutefish-settings-git
+          cutefish-qt-plugins-git
+          cutefish-launcher-git
+          cutefish-kwin-plugins-git
+          cutefish-icons-git
+          cutefish-filemanager-git
+          cutefish-dock-git cutefish-core-git
+          cutefish-calculator-git
+          cutefish-terminal-git
+          cutefish-screenlocker-git
+        missing_pacman_dependencies: >
+          libxcursor
+          
     - name: List generated Files
       run: ls -1 > ${{ github.workspace }}/files.txt
     - name: Remove the current data from the release
@@ -45,13 +44,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: aurci2
+        tag_name: cutefish-git-ci
     - name: Upload Files to Release
       uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: aurci2
+        tag_name: cutefish-git-ci
         name: aurci build ${{ github.run_number }} from ${{ steps.date.outputs.date }}
         body: aurci build ${{ github.run_number }} from ${{ steps.date.outputs.date }}
         files: |
