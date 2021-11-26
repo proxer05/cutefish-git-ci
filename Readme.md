@@ -18,3 +18,7 @@ You can use these packages by adding the following to your `/etc/pacman.conf`:
 SigLevel = Optional TrustAll
 Server = https://github.com/proxer05/cutefish-git-ci/releases/download/cutefish-git-ci
 ```
+
+## Credits
+
+Thanks https://github.com/kopp for https://github.com/kopp/build-aur-packages and  https://github.com/eyenpi for AUR package.
